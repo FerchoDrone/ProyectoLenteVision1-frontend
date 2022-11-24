@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LentesvisionLayoutComponent } from './layouts/lentesvision-layout/lentesvision-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { FormulationComponent } from './formulation/formulation.component';
 
 const routes: Routes = [{
   path: '',
@@ -30,8 +31,21 @@ const routes: Routes = [{
     },
 
   ]
+},
+{
+  path: '',
+  component: FormulationComponent,
+  children: [
+    {
+      path: 'formulation',
+      loadChildren: () =>
+        import('./formulation/formulation.module').then((m) => m.FormulationModule),
+    },
+
+  ]
 }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
