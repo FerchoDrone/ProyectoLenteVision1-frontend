@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormulationComponent } from './formulation.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+
 
 
 @NgModule({
@@ -10,7 +12,9 @@ import { MatInputModule } from '@angular/material/input';
   ],
   imports: [
     CommonModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+
   ]
 })
 export class FormulationModule { }
