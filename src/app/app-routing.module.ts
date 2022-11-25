@@ -30,6 +30,17 @@ const routes: Routes = [{
     },
 
   ]
+},{
+  path: '',
+  component: AuthLayoutComponent,
+  children: [
+    {
+      path: '/pqrs',
+      loadChildren: () =>
+        import('./pqrs/pqrs.component').then((m) => m.PqrsComponent),
+    },
+
+  ]
 }
 ];
 
