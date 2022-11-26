@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormulationComponent } from './formulation.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -14,6 +16,8 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     MatInputModule,
     MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })

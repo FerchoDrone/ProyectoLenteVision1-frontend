@@ -9,6 +9,7 @@ import { LentesvisionLayoutComponent } from './layouts/lentesvision-layout/lente
 import { NavbarComponent } from './layouts/components/navbar/navbar.component';
 import { FooterComponent } from './layouts/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
     LentesvisionLayoutComponent,
     NavbarComponent,
     FooterComponent,
-    
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

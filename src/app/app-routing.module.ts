@@ -18,6 +18,18 @@ const routes: Routes = [{
       loadChildren: () =>
         import('./profile/profile.module').then((m) => m.ProfileModule),
     },
+    {
+      path: '',
+      component: FormulationComponent,
+      children: [
+        {
+          path: 'formulation',
+          loadChildren: () =>
+            import('./formulation/formulation.module').then((m) => m.FormulationModule),
+        },
+
+      ]
+    }
   ]
 },
 {
@@ -32,18 +44,7 @@ const routes: Routes = [{
 
   ]
 },
-{
-  path: '',
-  component: FormulationComponent,
-  children: [
-    {
-      path: 'formulation',
-      loadChildren: () =>
-        import('./formulation/formulation.module').then((m) => m.FormulationModule),
-    },
 
-  ]
-}
 ];
 
 

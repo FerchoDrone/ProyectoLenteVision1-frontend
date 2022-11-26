@@ -1,4 +1,4 @@
-<form class="example-form bd formula">
+<form class="example-form bd formula" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="p-3 mb-2 mt-5 bg-light text-dark container-fluid justify-content-center align-items-center d-flex">
         <div class="border border-primary mb-2">
             <div class="row">
@@ -10,12 +10,12 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Esfera Derecha</mat-label>
-                            <input matInput placeholder="Esfera derecha" value="+/-00.00">
+                            <input matInput placeholder="Esfera derecha" value="+/-00.00" formControlName="esfRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Esfera Izquierda</mat-label>
-                            <input matInput placeholder="Esfera Izquierda" value="+/-00.00">
+                            <input matInput placeholder="Esfera Izquierda" value="+/-00.00" formControlName="esfLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -23,12 +23,12 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Cilindro Derecho</mat-label>
-                            <input matInput placeholder="Cilindro Derecho" value="-00.00">
+                            <input matInput placeholder="Cilindro Derecho" value="-00.00" formControlName="cylRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Cilindro Izquierdo</mat-label>
-                            <input matInput placeholder="Cilindro Izquierdo" value="-00.00">
+                            <input matInput placeholder="Cilindro Izquierdo" value="-00.00" formControlName="cylLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -36,12 +36,12 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Eje Derecho</mat-label>
-                            <input matInput placeholder="Eje Derecho" value="00°">
+                            <input matInput placeholder="Eje Derecho" value="00°" formControlName="axisRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Eje Izquierdo</mat-label>
-                            <input matInput placeholder="Eje Izquierdo" value="00°">
+                            <input matInput placeholder="Eje Izquierdo" value="00°" formControlName="axisLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -49,12 +49,12 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5 ml-5">
                             <mat-label>DNP Derecho</mat-label>
-                            <input matInput placeholder="DNP Derecho " value="">
+                            <input matInput placeholder="DNP Derecho " value="" formControlName="dnpRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width ml-5">
                             <mat-label>DNP Izquierdo</mat-label>
-                            <input matInput placeholder="DNP Izquierdo" value="">
+                            <input matInput placeholder="DNP Izquierdo" value="" formControlName="dnpLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -62,8 +62,20 @@
 
             </div>
         </div>
+
+    </div>
+    <div class="p-3 mb-2 bg-light text-dark">
+        <div class="p-2 mb-2 container-fluid justify-content-center align-items-center d-flex">
+            <button type="button" class="btn btn-primary">ACEPTAR</button>
+        </div>
     </div>
 </form>
+
+
+
+
+
+
 <div class="p-3 mb-2 bg-light text-dark">
     <div class="border border-primary p-2 mb-2 container-fluid justify-content-center align-items-center d-flex">
         <select class="form-select" aria-label="Default select example">
