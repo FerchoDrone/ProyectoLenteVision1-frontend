@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactenosComponent } from './contactenos.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -9,7 +12,9 @@ import { ContactenosComponent } from './contactenos.component';
     ContactenosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class ContactenosModule { }
