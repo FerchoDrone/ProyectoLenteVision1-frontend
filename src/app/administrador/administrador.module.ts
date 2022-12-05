@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdministradorComponent } from './administrador.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 
@@ -9,7 +11,8 @@ import { AdministradorComponent } from './administrador.component';
     AdministradorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ]
 })
 export class AdministradorModule { }

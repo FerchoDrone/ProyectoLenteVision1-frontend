@@ -4,6 +4,7 @@ import { LentesvisionLayoutComponent } from './layouts/lentesvision-layout/lente
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { FormulationComponent } from './formulation/formulation.component';
 import { ContactenosComponent } from './contactenos/contactenos.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 const routes: Routes = [{
   path: '',
@@ -58,7 +59,20 @@ const routes: Routes = [{
     },
 
   ]
-}
+},
+
+{
+  path: '',
+  component: AdministradorComponent,
+  children: [
+    {
+      path: 'administrador',
+      loadChildren: () =>
+        import('./administrador/administrador.module').then((m) => m.AdministradorModule),
+    },
+
+  ]
+},
 
 ];
 

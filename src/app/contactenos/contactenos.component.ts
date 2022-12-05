@@ -15,11 +15,8 @@ export class ContactenosComponent implements OnInit{
 
   form = this
 
-  ngOnInit(): void {
+  ngOnInit(): void{
   }
 
-
-
 }
-
 
