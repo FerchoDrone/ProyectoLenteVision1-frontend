@@ -10,12 +10,14 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Esfera Derecha</mat-label>
-                            <input matInput placeholder="Esfera derecha" value="+/-00.00" formControlName="esfRight">
+                            <input matInput placeholder="Esfera derecha" type=number value="+/-00.00"
+                                formControlName="esfRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Esfera Izquierda</mat-label>
-                            <input matInput placeholder="Esfera Izquierda" value="+/-00.00" formControlName="esfLeft">
+                            <input matInput placeholder="Esfera Izquierda" type=number value="+/-00.00"
+                                formControlName="esfLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -23,12 +25,14 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Cilindro Derecho</mat-label>
-                            <input matInput placeholder="Cilindro Derecho" value="-00.00" formControlName="cylRight">
+                            <input matInput placeholder="Cilindro Derecho" type=number value="-00.00"
+                                formControlName="cylRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Cilindro Izquierdo</mat-label>
-                            <input matInput placeholder="Cilindro Izquierdo" value="-00.00" formControlName="cylLeft">
+                            <input matInput placeholder="Cilindro Izquierdo" type=number value="-00.00"
+                                formControlName="cylLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -36,12 +40,14 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5">
                             <mat-label>Eje Derecho</mat-label>
-                            <input matInput placeholder="Eje Derecho" value="00°" formControlName="axisRight">
+                            <input matInput placeholder="Eje Derecho" type=number value="00°"
+                                formControlName="axisRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
                             <mat-label>Eje Izquierdo</mat-label>
-                            <input matInput placeholder="Eje Izquierdo" value="00°" formControlName="axisLeft">
+                            <input matInput placeholder="Eje Izquierdo" type=number value="00°"
+                                formControlName="axisLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -49,12 +55,12 @@
                     <div class="row">
                         <mat-form-field class="example-full-width mt-5 ml-5">
                             <mat-label>DNP Derecho</mat-label>
-                            <input matInput placeholder="DNP Derecho " value="" formControlName="dnpRight">
+                            <input matInput placeholder="DNP Derecho" type=number value="" formControlName="dnpRight">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width ml-5">
                             <mat-label>DNP Izquierdo</mat-label>
-                            <input matInput placeholder="DNP Izquierdo" value="" formControlName="dnpLeft">
+                            <input matInput placeholder="DNP Izquierdo" type=number value="" formControlName="dnpLeft">
                         </mat-form-field>
                     </div>
                 </div>
@@ -64,42 +70,34 @@
         </div>
 
     </div>
-    <div class="p-3 mb-2 bg-light text-dark">
-        <div class="p-2 mb-2 container-fluid justify-content-center align-items-center d-flex">
-            <button type="button" class="btn btn-primary">ACEPTAR</button>
+    <section>
+        <div class="example-label"></div>
+        <div
+            class="example-button-row container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
+            <button mat-raised-button color="primary" class="aceptar">Aceptar</button>
         </div>
-    </div>
+    </section>
+
 </form>
 
-
-
-
-
-
-<div class="p-3 mb-2 bg-light text-dark">
-    <div class="border border-primary p-2 mb-2 container-fluid justify-content-center align-items-center d-flex">
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Selecciona tu lente</option>
-            <option value="1">CR39 TERMINADO</option>
-            <option value="1">CR39 TERMINADO AR</option>
-            <option value="2">CR39 TALLADO</option>
-            <option value="3">POLY TERMINADO</option>
-            <option value="3">POLY TERMINADO AR</option>
-            <option value="4">POLY TALLADO</option>
-            <option value="5">1.56 TERMINADO</option>
-            <option value="5">1.56 TERMINADO AR</option>
-            <option value="6">1.56 TALLADO</option>
-            <option value="7">1.60 TERMINADO</option>
-            <option value="7">1.60 TERMINADO AR</option>
-            <option value="8">1.60 TALLADO</option>
-            <option value="7">1.67 TERMINADO</option>
-            <option value="7">1.67 TERMINADO AR</option>
-            <option value="8">1.67 TALLADO</option>
-        </select>
-    </div>
-    <div class="p-3 mb-2 bg-light text-dark">
-        <div class="p-2 mb-2 container-fluid justify-content-center align-items-center d-flex">
-            <button type="button" class="btn btn-primary">ACEPTAR</button>
+<form>
+    <h1
+        class="SeleccionaTuLente container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
+        Selecciona tu lente</h1>
+    <mat-form-field appearance="fill"
+        class="selectLentes container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
+        <mat-label>Tipos de lentes</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let lente of filterLentes" [value]="lente.tipo">
+                {{lente.material}} {{lente.tipo}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <section>
+        <div class="example-label"></div>
+        <div
+            class="example-button-row container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
+            <button mat-raised-button color="primary" class="aceptar">Aceptar</button>
         </div>
-    </div>
-</div>
+    </section>
+</form>
