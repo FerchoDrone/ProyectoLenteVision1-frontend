@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LentesvisionLayoutComponent } from './layouts/lentesvision-layout/lentesvision-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { PqrsComponent } from './pqrs/pqrs.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,7 +17,11 @@ const routes: Routes = [{
       path: 'profile',
       loadChildren: () =>
         import('./profile/profile.module').then((m) => m.ProfileModule),
-    },
+    },{
+      path: 'pqrs',
+      loadChildren: () =>
+        import('./pqrs/pqrs.module').then((m) => m.PqrsModule)
+    }
   ]
 },
 {
@@ -30,18 +35,7 @@ const routes: Routes = [{
     },
 
   ]
-},{
-  path: '',
-  component: AuthLayoutComponent,
-  children: [
-    {
-      path: '/pqrs',
-      loadChildren: () =>
-        import('./pqrs/pqrs.component').then((m) => m.PqrsComponent),
-    },
-
-  ]
-}
+},
 ];
 
 @NgModule({
