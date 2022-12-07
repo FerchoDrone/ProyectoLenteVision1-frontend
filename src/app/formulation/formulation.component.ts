@@ -20,58 +20,59 @@ export class FormulationComponent implements OnInit {
     axisLeft: [0, Validators.required],
     dnpRight: [0, Validators.required],
     dnpLeft: [0, Validators.required],
+    materialLen: ['']
   });
 
 
 
-
+  material: any
 
 
   lentes = [
     {
-      material: 'cr39', tipo: 'terminado'
+      material: 'CR39', tipo: 'Terminado'
     },
     {
-      material: 'cr39 ar', tipo: 'terminado'
+      material: 'CR39 AR', tipo: 'Terminado'
     },
     {
-      material: 'cr39', tipo: 'tallado'
+      material: 'CR39', tipo: 'Tallado'
     },
     {
-      material: 'poly', tipo: 'terminado'
+      material: 'Poly', tipo: 'Terminado'
     },
     {
-      material: 'poly ar', tipo: 'terminado'
+      material: 'Poly AR', tipo: 'Terminado'
     },
     {
-      material: 'poly', tipo: 'tallado'
+      material: 'Poly', tipo: 'Tallado'
     },
     {
-      material: '1.56', tipo: 'terminado'
+      material: '1.56', tipo: 'Terminado'
     },
     {
-      material: '1.56 ar', tipo: 'terminado'
+      material: '1.56 AR', tipo: 'Terminado'
     },
     {
-      material: '1.56', tipo: 'tallado'
+      material: '1.56', tipo: 'Tallado'
     },
     {
-      material: '1.60', tipo: 'terminado'
+      material: '1.60', tipo: 'Terminado'
     },
     {
-      material: '1.60 ar', tipo: 'terminado'
+      material: '1.60 AR', tipo: 'Terminado'
     },
     {
-      material: '1.60', tipo: 'tallado'
+      material: '1.60', tipo: 'Tallado'
     },
     {
-      material: '1.67', tipo: 'terminado'
+      material: '1.67', tipo: 'Terminado'
     },
     {
-      material: '1.67 ar', tipo: 'terminado'
+      material: '1.67 AR', tipo: 'Terminado'
     },
     {
-      material: '1.67', tipo: 'tallado'
+      material: '1.67', tipo: 'Tallado'
     }
   ]
   filterLentes: any
@@ -83,20 +84,28 @@ export class FormulationComponent implements OnInit {
     let estado = ''
     const data: any = this.form.value
     if (this.form.valid) {
-      console.log(this.form.value)
+
       if (data.esfRight < -2 || data.esfRight > 2 || data.cylRight < -2 || data.esfLeft < -2 || data.esfLeft > 2 || data.cylLeft < -2) {
-        estado = 'tallado'
+        estado = 'Tallado'
       }
       else if (data.esfRight > -2 || data.esfRight < 2 || data.cylRight > -2 || data.esfLeft > -2 || data.esfLeft < 2 || data.cylLeft > -2) {
-        estado = 'terminado'
+        estado = 'Terminado'
       }
-      console.log(estado)
+
     }
+
 
     this.filterLentes = this.lentes.filter(data => {
       return data.tipo == estado
     })
+    console.log(data)
 
+
+  }
+  onClick(): void {
+
+    this.form.patchValue({ materialLen: this.material })
+    console.log(this.form.value)
   }
 
 }

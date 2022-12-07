@@ -73,31 +73,30 @@
     <section>
         <div class="example-label"></div>
         <div
-            class="example-button-row container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
+            class="example-button-row container-fluid justify-content-center align-items-center d-flex p-3 mb-2 bg-light text-dark">
             <button mat-raised-button color="primary" class="aceptar">Aceptar</button>
         </div>
     </section>
 
 </form>
 
-<form>
-    <h1
-        class="SeleccionaTuLente container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
-        Selecciona tu lente</h1>
-    <mat-form-field appearance="fill"
-        class="selectLentes container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
-        <mat-label>Tipos de lentes</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let lente of filterLentes" [value]="lente.tipo">
-                {{lente.material}} {{lente.tipo}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <section>
-        <div class="example-label"></div>
-        <div
-            class="example-button-row container-fluid justify-content-center align-items-center d-flex ==> para que todo quede centrado p-3 mb-2 bg-light text-dark">
-            <button mat-raised-button color="primary" class="aceptar">Aceptar</button>
-        </div>
-    </section>
-</form>
+
+<h1
+    class="SeleccionaTuLente container-fluid justify-content-center align-items-center d-flex p-3 mb-2 bg-light text-dark">
+    Selecciona tu lente</h1>
+<mat-form-field appearance="fill"
+    class="selectLentes container-fluid justify-content-center align-items-center d-flex p-3 mb-2 bg-light text-dark">
+    <mat-label>Tipos de lentes</mat-label>
+    <mat-select input [(ngModel)]="material">
+        <mat-option *ngFor="let lente of filterLentes" [value]="lente.material + ' ' + lente.tipo">
+            {{lente.material}} {{lente.tipo}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<section>
+    <div class="example-label"></div>
+    <div
+        class="example-button-row container-fluid justify-content-center align-items-center d-flex p-3 mb-2 bg-light text-dark">
+        <button mat-raised-button (click)="onClick()" color="primary" class="aceptar">Aceptar</button>
+    </div>
+</section>
