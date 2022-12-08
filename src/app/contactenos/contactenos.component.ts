@@ -10,12 +10,43 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./contactenos.component.scss']
 })
 export class ContactenosComponent implements OnInit{
-  
-  constructor() { }
+ 
 
-  form = this
+  // constructor(){}
+  // form = this
+  
+  constructor( private fb: FormBuilder, private authService:AuthService) { }
+
+  form = this.fb.group({
+   Nombre: ['', Validators.required],
+   Apellido: ['', Validators.required], 
+   Correo: ['', [Validators.required,Validators.email]],
+   Telefono: ['', Validators.required],
+   Comentarios:['', Validators.required],
+  });
 
   ngOnInit(): void{
+    
+  }
+
+  onSubmit():void{
+    console.log("On Submit Method forms");
+    if (this.form.valid) {
+    console.log("Formulario valido");
+    console.log(this.form.value),
+    this.authService.contactenos(this.form.value).subscribe({
+     next: (data) => {
+      console.log(data);
+     },
+     error: (err) => {
+      console.log(err);
+     },
+     
+    });
+    } else {
+      console.log("Formulario no valido");
+    }
+    console.log(this.form.valid);
   }
 
 }
