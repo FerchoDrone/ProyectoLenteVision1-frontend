@@ -6,9 +6,15 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class AuthService {
+  
 
   constructor(private http: HttpClient) { }
-
+  
+  contactenos(account:any) {
+    console.log("En el signUp");
+    console.log(environment.apiUrl);
+    return this.http.post(`${environment.apiUrl}/api/contact/contactenos`,account)
+  }
   signup(account:any) {
     console.log("En el signUp");
     console.log(environment.apiUrl);
@@ -20,4 +26,6 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/api/auth/login`,account)
 
   }
+
+  
 }
